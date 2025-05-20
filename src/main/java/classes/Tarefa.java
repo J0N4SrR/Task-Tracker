@@ -20,14 +20,20 @@ public class Tarefa {
         this.id = id;
     }
 
-    public void modificaTarefa(String desc){
-        this.descricao = desc;
-        this.dataModificacao = LocalDateTime.now();
+    public int getId() {
+        return id;
     }
 
-    public void modificaTarefa(){
+    public void setDataModificacao(LocalDateTime dataModificacao) {
+        this.dataModificacao = dataModificacao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setStatus() {
         this.status = !status;
-        this.dataModificacao = LocalDateTime.now();
     }
 
     @Override
