@@ -2,18 +2,22 @@ package classes;
 import java.time.LocalDateTime;
 
 public class Tarefa {
-    private int id = 0;
+    private int id;
     private String descricao;
     private boolean status;
-    private LocalDateTime dataCriacao;
+    private final LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
 
-    public Tarefa(int id, String descricao, boolean status) {
-        this.id = id;
+    public Tarefa(String descricao, boolean status) {
+
         this.descricao = descricao;
         this.status = status;
         this.dataCriacao = LocalDateTime.now();
         this.dataModificacao = LocalDateTime.now();
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void modificaTarefa(String desc){
