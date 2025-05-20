@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 public class ListaTarefa {
     classes.Tarefa[] listaDeTarefas;
-    private int cont = 0;
 
     public ListaTarefa(int e) {
         this.listaDeTarefas = new Tarefa[e];
@@ -16,7 +15,6 @@ public class ListaTarefa {
             if(listaDeTarefas[i] == null){
                 this.listaDeTarefas[i] = tarefa;
                 tarefa.setId(i);
-                cont++;
                 return true;
             }
         }
@@ -34,10 +32,10 @@ public class ListaTarefa {
         return false;
     }
 
-    public boolean modificaTarefa(int id){
+    public boolean modificaTarefa(int id, Status status){
         for(Tarefa tarefa : listaDeTarefas) {
             if(tarefa.getId() == id){
-                tarefa.setStatus();
+                tarefa.setStatus(status);
                 tarefa.setDataModificacao(LocalDateTime.now());
                 return true;
             }
@@ -45,7 +43,7 @@ public class ListaTarefa {
         return false;
     }
 
-    public boolean removeTarefa(int id){
+    public boolean removerTarefa(int id){
         for(int i = 0; i < this.listaDeTarefas.length; i++){
             if(i == id){
                 this.listaDeTarefas[i] = null;
@@ -55,8 +53,8 @@ public class ListaTarefa {
         return false;
     }
 
-    public void criaTarefa(String descricao, boolean status){
-        Tarefa tarefa = new Tarefa(descricao,status);
+    public void criarTarefa(String descricao, boolean status){
+        Tarefa tarefa = new Tarefa(descricao);
         adicionaTarefa(tarefa);
     }
 

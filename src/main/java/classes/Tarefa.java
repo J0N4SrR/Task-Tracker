@@ -4,16 +4,19 @@ import java.time.LocalDateTime;
 public class Tarefa {
     private int id;
     private String descricao;
-    private boolean status;
+    private Status status;
     private final LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
 
-    public Tarefa(String descricao, boolean status) {
-
+    public Tarefa(String descricao) {
         this.descricao = descricao;
-        this.status = status;
+        status = Status.TODO;
         this.dataCriacao = LocalDateTime.now();
         this.dataModificacao = LocalDateTime.now();
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public void setId(int id) {
@@ -32,9 +35,7 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public void setStatus() {
-        this.status = !status;
-    }
+
 
     @Override
     public String toString() {
