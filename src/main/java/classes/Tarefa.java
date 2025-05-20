@@ -1,0 +1,39 @@
+package classes;
+import java.time.LocalDateTime;
+
+public class Tarefa {
+    private int id = 0;
+    private String descricao;
+    private boolean status;
+    private LocalDateTime dataCriacao;
+    private LocalDateTime dataModificacao;
+
+    public Tarefa(int id, String descricao, boolean status) {
+        this.id = id;
+        this.descricao = descricao;
+        this.status = status;
+        this.dataCriacao = LocalDateTime.now();
+        this.dataModificacao = LocalDateTime.now();
+    }
+
+    public void modificaTarefa(String desc){
+        this.descricao = desc;
+        this.dataModificacao = LocalDateTime.now();
+    }
+
+    public void modificaTarefa(){
+        this.status = !status;
+        this.dataModificacao = LocalDateTime.now();
+    }
+
+    @Override
+    public String toString() {
+        return "Tarefa{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", status=" + status +
+                ", dataCriacao=" + dataCriacao +
+                ", dataModificacao=" + dataModificacao +
+                '}';
+    }
+}
