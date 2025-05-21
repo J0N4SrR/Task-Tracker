@@ -10,7 +10,7 @@ public class ListaTarefa {
         this.listaDeTarefas = new Tarefa[e];
     }
 
-    public boolean adicionaTarefa(Tarefa tarefa){
+    private boolean adicionaTarefa(Tarefa tarefa){
         for(int i = 0; i < this.listaDeTarefas.length; i++){
             if(listaDeTarefas[i] == null){
                 this.listaDeTarefas[i] = tarefa;
@@ -25,7 +25,7 @@ public class ListaTarefa {
         for(Tarefa tarefa : listaDeTarefas) {
             if(tarefa.getId() == id){
                 tarefa.setDescricao(desc);
-                tarefa.setDataModificacao(LocalDateTime.now());
+                tarefa.setDataModificacao();
                 return true;
             }
         }
@@ -36,7 +36,7 @@ public class ListaTarefa {
         for(Tarefa tarefa : listaDeTarefas) {
             if(tarefa.getId() == id){
                 tarefa.setStatus(status);
-                tarefa.setDataModificacao(LocalDateTime.now());
+                tarefa.setDataModificacao();
                 return true;
             }
         }
@@ -53,7 +53,7 @@ public class ListaTarefa {
         return false;
     }
 
-    public void criarTarefa(String descricao, boolean status){
+    public void criarTarefa(String descricao){
         Tarefa tarefa = new Tarefa(descricao);
         adicionaTarefa(tarefa);
     }

@@ -1,18 +1,21 @@
 package classes;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Tarefa {
     private int id;
     private String descricao;
     private Status status;
-    private final LocalDateTime dataCriacao;
-    private LocalDateTime dataModificacao;
+    private final String dataCriacao;
+    private String dataModificacao;
 
     public Tarefa(String descricao) {
         this.descricao = descricao;
+        String now = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        this.dataCriacao = now;
+        this.dataModificacao = now;
         status = Status.TODO;
-        this.dataCriacao = LocalDateTime.now();
-        this.dataModificacao = LocalDateTime.now();
+
     }
 
     public void setStatus(Status status) {
@@ -27,12 +30,16 @@ public class Tarefa {
         return id;
     }
 
-    public void setDataModificacao(LocalDateTime dataModificacao) {
-        this.dataModificacao = dataModificacao;
+    public void setDataModificacao() {
+        this.dataModificacao = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
     }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String salvarJson(){
+        return String.format("{ \"id\": %d, \"descricao\": \"%s\", \"status\": \"%s\", \"dataCriacao\": \"%s\", \"dataModificacao\": \"%s\" }", id, descricao, status.getDescricao(), dataCriacao,dataModificacao );
     }
 
 
