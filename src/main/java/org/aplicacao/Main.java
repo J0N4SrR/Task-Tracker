@@ -10,7 +10,7 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        ListaTarefa lista = new ListaTarefa(5);
+        ListaTarefa lista = new ListaTarefa();
         Tarefa ta = new Tarefa("teste");
         int opc;
         Scanner scanner = new Scanner(System.in);
@@ -21,18 +21,6 @@ public class Main {
 //        System.out.println("2 - Modificar uma tarefa existente");
 //        System.out.println("3 - Excluir uma tarefa existente");
 //        System.out.println("4 - Listar todas as tarefas");
-
-
-        System.out.println(ta.salvarJson());
-
-
-
-
-
-
-
-
-
 
         }
     }

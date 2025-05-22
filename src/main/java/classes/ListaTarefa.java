@@ -1,24 +1,17 @@
 package classes;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.List;
 
 public class ListaTarefa {
-    classes.Tarefa[] listaDeTarefas;
+    List<Tarefa> listaDeTarefas;
+    private int id = 0;
 
-    public ListaTarefa(int e) {
-        this.listaDeTarefas = new Tarefa[e];
-    }
 
-    private boolean adicionaTarefa(Tarefa tarefa){
-        for(int i = 0; i < this.listaDeTarefas.length; i++){
-            if(listaDeTarefas[i] == null){
-                this.listaDeTarefas[i] = tarefa;
-                tarefa.setId(i);
-                return true;
-            }
-        }
-        return false;
+    private void adicionaTarefa(Tarefa tarefa){
+        this.listaDeTarefas.add(tarefa);
+        id++;
+        tarefa.setId(id);
     }
 
     public boolean modificaTarefa(int id, String desc){
@@ -58,10 +51,9 @@ public class ListaTarefa {
         adicionaTarefa(tarefa);
     }
 
+
     @Override
     public String toString() {
-        return "ListaTarefa{" +
-                "listaDeTarefas=" + Arrays.toString(listaDeTarefas) +
-                '}';
+        return "ListaTarefa {" + "Lista de Tarefas = " + Arrays.toString(listaDeTarefas) +'}';
     }
 }

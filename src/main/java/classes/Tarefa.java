@@ -42,16 +42,9 @@ public class Tarefa {
         return String.format("{ \"id\": %d, \"descricao\": \"%s\", \"status\": \"%s\", \"dataCriacao\": \"%s\", \"dataModificacao\": \"%s\" }", id, descricao, status.getDescricao(), dataCriacao,dataModificacao );
     }
 
-
-
     @Override
     public String toString() {
-        return "Tarefa{" +
-                "id=" + id +
-                ", descricao='" + descricao + '\'' +
-                ", status=" + status +
-                ", dataCriacao=" + dataCriacao +
-                ", dataModificacao=" + dataModificacao +
-                '}';
+        return "Tarefa {" + "id = " + id +", descricao = '" + descricao + '\'' + ", status = " + status +
+                ", dataCriacao = " + dataCriacao + ", dataModificacao = " + dataModificacao + '}';
     }
 }
