@@ -18,6 +18,10 @@ public class Tarefa {
 
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
     public void setStatus(Status status) {
         this.status = status;
     }
@@ -46,7 +50,7 @@ public class Tarefa {
 
     @Override
     public String toString() {
-        return "Tarefa {" + "id = " + id +", descricao = '" + descricao + '\'' + ", status = " + status +
-                ", dataCriacao = " + dataCriacao + ", dataModificacao = " + dataModificacao + '}';
+        return "Tarefa id = " + id +", descrição = '" + descricao + '\'' + ", status = " + status +
+                ", dataCriacao = " + dataCriacao + ", dataModificacao = " + dataModificacao + "\n";
     }
 }

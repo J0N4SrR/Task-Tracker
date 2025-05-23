@@ -13,4 +13,13 @@ public enum Status{
     public String getDescricao(){
         return descricao;
     }
+
+    public static Status DevolveStatus(String entrada){
+        for(Status s : Status.values()){
+            if(s.getDescricao().equalsIgnoreCase(entrada)){
+                return s;
+            }
+        }
+        return null;
+    }
 };

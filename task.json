@@ -1,0 +1,7 @@
+{
+  "ListaDeTarefas": [
+{ "id": 1, "descricao": "teste", "status": "toDo", "dataCriacao": "2025-05-23T12:54:19.35798254", "dataModificacao": "2025-05-23T12:54:19.35798254" },
+{ "id": 2, "descricao": "asd", "status": "toDo", "dataCriacao": "2025-05-23T12:54:24.511614294", "dataModificacao": "2025-05-23T12:54:24.511614294" },
+{ "id": 3, "descricao": "dsa", "status": "toDo", "dataCriacao": "2025-05-23T12:55:06.797055554", "dataModificacao": "2025-05-23T12:55:06.797055554" }
+]
+}
