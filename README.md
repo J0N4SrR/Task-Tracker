@@ -1,44 +1,50 @@
 # Task Tracker CLI
 
-Um aplicativo de linha de comando para gerenciar tarefas simples. Permite adicionar, atualizar, excluir, listar e alterar o status de tarefas diretamente pelo terminal.
+Um aplicativo de linha de comando simples e eficiente para gerenciar tarefas. Permite adicionar, atualizar, excluir, listar e alterar o status de tarefas diretamente pelo terminal.
 
 ## 📌 Projeto base
-Este projeto foi baseado na proposta de desafio do roadmap.sh:
-https://roadmap.sh/projects/task-tracker
+
+Este projeto foi inspirado na proposta de desafio do [roadmap.sh](https://roadmap.sh/projects/task-tracker)
 
 ## 🛠️ Tecnologias
 
-- Java
+- Java 17+
 - Maven
+- Gson (para manipulação de JSON)
 
 ## 🎯 Funcionalidades
 
-- Adicionar uma nova tarefa
-- Atualizar ou excluir uma tarefa existente
-- Marcar tarefa como "em andamento" ou "concluída"
-- Listar todas as tarefas ou filtrar por status:
-  - A fazer (`todo`)
-  - Em andamento (`in-progress`)
+- ✅ Adicionar uma nova tarefa
+- ✅ Atualizar a descrição de uma tarefa existente
+- ✅ Atualizar o status de uma tarefa
+- ✅ Excluir uma tarefa
+- ✅ Listar todas as tarefas
+- ✅ Filtrar tarefas por status:
+  - A fazer (`toDo`)
+  - Em andamento (`inProgress`)
   - Concluídas (`done`)
+- ✅ Armazenamento persistente em JSON
 
 ## 📁 Armazenamento
 
-As tarefas são salvas em um arquivo `tasks.json` na raiz do projeto. O arquivo é criado automaticamente, caso não exista.
+As tarefas são armazenadas no arquivo `tasks.json`, criado automaticamente na raiz do projeto.
 
-Cada tarefa contém:
-- `id`: identificador único
+Cada tarefa inclui:
+- `id`: identificador único incremental
 - `description`: descrição da tarefa
-- `status`: `todo`, `in-progress`, ou `done`
-- `createdAt`: data de criação
-- `updatedAt`: data da última atualização
+- `status`: `toDo`, `inProgress`, ou `done`
+- `createdAt`: data de criação da tarefa
+- `updatedAt`: data da última modificação
 
-## 📦 Como compilar
 
-Clone o repositório e compile o projeto com Maven:
+## 📦 Como compilar e executar
 
-```bash
-git clone https://github.com/J0N4SrR/Task-Tracker.git
-cd task-tracker-cli
-mvn clean compile
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/task-tracker-cli.git
+   cd task-tracker-cli
+   mvn compile
+   mvn exec:java -Dexec.mainClass="Main"
+
 
 
