@@ -12,6 +12,11 @@ public class Main {
     public static void main(String[] args) {
         ListaTarefa lista = new ListaTarefa();
         Tarefa ta = new Tarefa("teste");
+        Tarefa ta1 = new Tarefa("xxx");
+        lista.adicionaTarefa(ta);
+        lista.adicionaTarefa(ta1);
+        lista.escreverListaJson();
+
         int opc;
         Scanner scanner = new Scanner(System.in);
 

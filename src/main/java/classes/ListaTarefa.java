@@ -1,14 +1,17 @@
 package classes;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ListaTarefa {
-    List<Tarefa> listaDeTarefas;
+    List<Tarefa> listaDeTarefas = new ArrayList<Tarefa>();
+    File file = new File("/home/jrr/Documents/Estudo_Otimização/teste/RoadmapJava/Task Tracker/Task Tracker/task.json");
     private int id = 0;
 
 
-    private void adicionaTarefa(Tarefa tarefa){
+    public void adicionaTarefa(Tarefa tarefa){
         this.listaDeTarefas.add(tarefa);
         id++;
         tarefa.setId(id);
@@ -36,14 +39,8 @@ public class ListaTarefa {
         return false;
     }
 
-    public boolean removerTarefa(int id){
-        for(int i = 0; i < this.listaDeTarefas.length; i++){
-            if(i == id){
-                this.listaDeTarefas[i] = null;
-                return true;
-            }
-        }
-        return false;
+    public void removerTarefa(int id){
+        listaDeTarefas.remove(id);
     }
 
     public void criarTarefa(String descricao){
@@ -52,8 +49,20 @@ public class ListaTarefa {
     }
 
 
+    public void escreverListaJson(){
+        try{
+            FileWriter fr = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fr);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @Override
     public String toString() {
-        return "ListaTarefa {" + "Lista de Tarefas = " + Arrays.toString(listaDeTarefas) +'}';
+        return "ListaTarefa{" +
+                "lista de Tarefas = " + listaDeTarefas +
+                '}';
     }
 }
