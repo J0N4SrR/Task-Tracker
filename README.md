@@ -44,7 +44,8 @@ Cada tarefa inclui:
    git clone https://github.com/seu-usuario/task-tracker-cli.git
    cd task-tracker-cli
    mvn compile
-   mvn exec:java -Dexec.mainClass="Main"
+   mvn exec:java -Dexec.mainClass="org.aplicacao.Main"
+
 
 
 
